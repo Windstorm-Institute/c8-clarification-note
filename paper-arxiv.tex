@@ -1,0 +1,41 @@
+% Paper 12 of The Windstorm Institute (Track 2: Entropic Bounds)
+% Companion to Paper 11 (Gravitational Entropy Escrow)
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{natbib}
+
+\title{On the Status of Local Entropy-Current Extensions of the Gravitational Entropy Escrow Framework: A Clarification Note}
+
+\author{Grant Lavell Whitmer III\\
+The Windstorm Institute, Fort Ann, NY 12827, USA\\
+\texttt{grantwhitmer3@gmail.com}}
+
+\date{May 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+In dialogue exploring possible covariant extensions of the Gravitational Entropy Escrow framework (Whitmer 2026), several large-language-model systems independently proposed an equation of the form $\nabla_\mu J_S^\mu = (2\pi k_B / \hbar)\,\epsilon_{\rm bind}$, designated C8, in which a local entropy 4-current is sourced by the local Tolman--Komar binding-energy density. We document the resolution of this proposal across multiple rounds of analysis. With dimensions accounted for correctly, with the standard energy density of the cosmological constant $\epsilon_\Lambda = \Lambda c^4 / (8\pi G)$, and with the integration time chosen as the light-crossing time of the relevant horizon, C8 reproduces both the Bekenstein--Hawking entropy of a Schwarzschild black hole and the Gibbons--Hawking entropy of the de Sitter cosmological horizon \emph{exactly}. However, this recovery is a consistency check rather than a derivation: C8 with $t = R/c$ is algebraically identical to the saturated Bekenstein bound (Bekenstein 1981), and any horizon that saturates the Bekenstein bound by construction will be reproduced by C8 trivially. The choice of integration time $t = R/c$ is post-hoc; other natural time scales associated with the horizon (Hawking evaporation, inverse surface gravity, free-fall) give different answers ranging across many orders of magnitude. C8 therefore reduces to a rate-equation reformulation of an established 1981 result rather than producing genuinely new physics. We document this resolution --- and the chain of dimensional and convention errors that complicated reaching it --- to spare future researchers extending the escrow framework from the same dead end. The published paper's interpretive content is unaffected; its central open problem (the order-unity coefficient $\alpha \approx 1.34$ between the bare $\Lambda$-form $a_0$ and the empirical Milgrom value) is not addressed by C8 in either direction.
+\end{abstract}
+
+\noindent\textbf{Keywords:} gravitational entropy escrow; horizon thermodynamics; Bekenstein bound; Bekenstein--Hawking entropy; Gibbons--Hawking entropy; de Sitter horizon; covariant extension; local entropy current; emergent gravity; AI-assisted research; multi-LLM adversarial review; dimensional analysis methodology.
+
+\section{Introduction}
+
+The full text of this paper (current version v0.3.1) is provided as \texttt{paper.pdf} in this repository. An extracted-text mirror suitable for grep/search is in \texttt{paper/Paper12-v0.3.1-source.txt}.
+
+\section*{Companion paper}
+
+This is a clarification note supplementing the Gravitational Entropy Escrow framework presented in Whitmer (2026), \url{https://github.com/Windstorm-Institute/gravitational-entropy-escrow}, DOI \texttt{10.5281/zenodo.20032023}.
+
+\section*{Code and Data Availability}
+
+The Python script \texttt{c8\_calculations\_v0\_3.py} reproducing all numerical claims, with sympy dimensional analysis and reality checks against Planck 2018 values, is mirrored at \url{https://github.com/Windstorm-Labs/c8-clarification-note}. The script runs in under one second.
+
+\end{document}
