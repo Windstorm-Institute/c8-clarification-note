@@ -75,6 +75,14 @@ Current authoritative archive: **[Zenodo (10.5281/zenodo.20041992)](https://doi.
 
 ---
 
+## Discuss this paper
+
+- **Discuss the paper's ideas** → [Comments on the website article](https://windstorminstitute.org/articles/c8-clarification-note.html#comments) (powered by GitHub Discussions on the website repo)
+- **Typo, citation issue, or paper-content correction?** → [Open an Issue on this repo](../../issues)
+- **Bug in the analysis code, or a reproduction question?** → [Issue](https://github.com/Windstorm-Labs/c8-clarification-note/issues) or [Discussion](https://github.com/Windstorm-Labs/c8-clarification-note/discussions) on the Labs repo
+
+---
+
 ## The Windstorm Institute — Two Research Tracks
 
 ### Track 1 — The Throughput Basin · 9 papers (Papers 1–9 globally; 1st through 9th in this track; arc complete)
