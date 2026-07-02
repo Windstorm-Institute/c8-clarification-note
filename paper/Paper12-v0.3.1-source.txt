@@ -10,7 +10,7 @@ Abstract
 In dialogue exploring possible covariant extensions of the Gravitational Entropy Escrow
 framework (Whitmer 2026), several large-language-model systems independently proposed an
 equation of the form ∇_μ J_S^μ = (2π k_B / ħ) · ε_bind, designated C8, in which a local entropy
-4-current is sourced by the local Tolman-Komar binding-energy density. We document the
+4-current is sourced by the local energy density. We document the
 resolution of this proposal across multiple rounds of analysis. With dimensions accounted for
 correctly, with the standard energy density of the cosmological constant ε_Λ = Λc⁴/(8πG), and
 with the integration time chosen as the light-crossing time of the relevant horizon, C8
@@ -40,8 +40,8 @@ variational principle on total entropy as the natural next step.
 In dialogue with multiple large-language-model systems exploring such an extension, a
 covariant equation of the form
                             ∇_μ J_S^μ = (2π k_B / ħ) · ε_bind     [C8]
-was independently proposed, with J_S^μ an entropy 4-current and ε_bind the Tolman-Komar
-binding-energy density. The dimensions balance: both sides have units of entropy production
+was independently proposed, with J_S^μ an entropy 4-current and ε_bind the local energy
+density. The dimensions balance: both sides have units of entropy production
 density per unit time, k_B/(m³ s).
 This note documents the resolution of C8's status. The result is small and specific: C8 with the
 light-crossing-time integration prescription is algebraically identical to the saturated Bekenstein
@@ -109,7 +109,7 @@ choices include:
     • Light-crossing time r_s/c ≈ 10⁻⁵ s, giving ratio S_C8/S_BH = 1.
     • Inverse surface gravity c/κ ≈ 2 × 10⁻⁵ s, giving ratio = 2.
     • π r_s/c (related to the inverse Hawking frequency) ≈ 3 × 10⁻⁵ s, giving ratio = π.
-    • Hawking evaporation time τ_evap ≈ 10⁶⁴ yr, giving ratio ≈ 10⁸⁰.
+    • Hawking evaporation time τ_evap ≈ 2 × 10⁶⁷ yr, giving ratio ≈ 10⁸⁰.
 Only the light-crossing time produces ratio = 1, and it does so because R/c is precisely the
 factor needed for C8 with prefactor (2π k_B / ħ) to algebraically equal the Bekenstein bound 2π
 k_B E R/(ħ c). The other natural time scales — each defensible on its own physical grounds —
