@@ -109,7 +109,7 @@ choices include:
     • Light-crossing time r_s/c ≈ 10⁻⁵ s, giving ratio S_C8/S_BH = 1.
     • Inverse surface gravity c/κ ≈ 2 × 10⁻⁵ s, giving ratio = 2.
     • π r_s/c (related to the inverse Hawking frequency) ≈ 3 × 10⁻⁵ s, giving ratio = π.
-    • Hawking evaporation time τ_evap ≈ 10⁶⁴ yr, giving ratio ≈ 10⁸⁰.
+    • Hawking evaporation time τ_evap ≈ 2 × 10⁶⁷ yr, giving ratio ≈ 10⁸⁰.
 Only the light-crossing time produces ratio = 1, and it does so because R/c is precisely the
 factor needed for C8 with prefactor (2π k_B / ħ) to algebraically equal the Bekenstein bound 2π
 k_B E R/(ħ c). The other natural time scales — each defensible on its own physical grounds —
