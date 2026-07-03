@@ -22,7 +22,7 @@ In dialogue exploring possible covariant extensions of the Gravitational Entropy
 ∇_μ J_S^μ = (2π k_B / ℏ) · ε_bind     [C8]
 ```
 
-with `J_S^μ` a local entropy 4-current sourced by the Tolman–Komar binding-energy density. The dimensions balance, and at first sight the equation looked like a promising covariant generalization of the static escrow postulate.
+with `J_S^μ` a local entropy 4-current sourced by the local energy density. The dimensions balance, and at first sight the equation looked like a promising covariant generalization of the static escrow postulate.
 
 **It is not.**
 
