@@ -1,41 +1,219 @@
-% Paper 12 of The Windstorm Institute (Track 2: Entropic Bounds)
-% Companion to Paper 11 (Gravitational Entropy Escrow)
-\documentclass[12pt,a4paper]{article}
-
+\documentclass[11pt]{article}
+\usepackage{wsi-style-lua}
 \usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage{hyperref}
-\usepackage{natbib}
-
-\title{On the Status of Local Entropy-Current Extensions of the Gravitational Entropy Escrow Framework: A Clarification Note}
-
-\author{Grant Lavell Whitmer III\\
-The Windstorm Institute, Fort Ann, NY 12827, USA\\
-\texttt{grantwhitmer3@gmail.com}}
-
+\newcommand{\SC}{S_{\mathrm{C8}}}
+\newcommand{\Sesc}{S_{\mathrm{esc}}}
+\wsirunhead{On the Status of Local Entropy-Current Extensions}
+\title{On the Status of Local Entropy-Current Extensions of the\\[2pt]
+\large Gravitational Entropy Escrow Framework: A Clarification Note}
+\author{Grant Whitmer}
 \date{May 2026}
 
 \begin{document}
-
 \maketitle
 
 \begin{abstract}
-In dialogue exploring possible covariant extensions of the Gravitational Entropy Escrow framework (Whitmer 2026), several large-language-model systems independently proposed an equation of the form $\nabla_\mu J_S^\mu = (2\pi k_B / \hbar)\,\epsilon_{\rm bind}$, designated C8, in which a local entropy 4-current is sourced by the local energy density. We document the resolution of this proposal across multiple rounds of analysis. With dimensions accounted for correctly, with the standard energy density of the cosmological constant $\epsilon_\Lambda = \Lambda c^4 / (8\pi G)$, and with the integration time chosen as the light-crossing time of the relevant horizon, C8 reproduces both the Bekenstein--Hawking entropy of a Schwarzschild black hole and the Gibbons--Hawking entropy of the de Sitter cosmological horizon \emph{exactly}. However, this recovery is a consistency check rather than a derivation: C8 with $t = R/c$ is algebraically identical to the saturated Bekenstein bound (Bekenstein 1981), and any horizon that saturates the Bekenstein bound by construction will be reproduced by C8 trivially. The choice of integration time $t = R/c$ is post-hoc; other natural time scales associated with the horizon (Hawking evaporation, inverse surface gravity, free-fall) give different answers ranging across many orders of magnitude. C8 therefore reduces to a rate-equation reformulation of an established 1981 result rather than producing genuinely new physics. We document this resolution --- and the chain of dimensional and convention errors that complicated reaching it --- to spare future researchers extending the escrow framework from the same dead end. The published paper's interpretive content is unaffected; its central open problem (the order-unity coefficient $\alpha \approx 1.34$ between the bare $\Lambda$-form $a_0$ and the empirical Milgrom value) is not addressed by C8 in either direction.
+In dialogue exploring covariant extensions of the Gravitational Entropy Escrow framework
+(Whitmer 2026), several large-language-model systems independently proposed an equation of the form
+$\nabla_{\mu} J_{S}^{\mu} = (2\pi k_{B}/\hbar)\,\varepsilon_{\mathrm{bind}}$, designated~C8, in which a
+local entropy 4-current is sourced by the local energy density. We document its resolution. With
+dimensions accounted for correctly, the standard cosmological-constant energy density
+$\varepsilon_{\Lambda} = \Lambda c^{4}/(8\pi G)$, and the integration time chosen as the horizon
+light-crossing time, C8 reproduces both the Bekenstein--Hawking entropy of a Schwarzschild black hole
+and the Gibbons--Hawking entropy of the de Sitter horizon exactly. This recovery is a consistency
+check, not a derivation: C8 with $t = R/c$ is algebraically identical to the saturated Bekenstein
+bound (Bekenstein 1981), so any horizon that saturates that bound is reproduced trivially. The choice
+$t = R/c$ is post-hoc---other natural horizon time scales give answers spanning many orders of
+magnitude. C8 therefore reduces to a rate-equation reformulation of a 1981 result rather than new
+physics. The published framework's interpretive content is unaffected, and its central open problem
+(the order-unity coefficient $\alpha \approx 1.34$ between the bare $\Lambda$-form $a_{0}$ and the
+empirical Milgrom value) is untouched by C8.
 \end{abstract}
 
-\noindent\textbf{Keywords:} gravitational entropy escrow; horizon thermodynamics; Bekenstein bound; Bekenstein--Hawking entropy; Gibbons--Hawking entropy; de Sitter horizon; covariant extension; local entropy current; emergent gravity; AI-assisted research; multi-LLM adversarial review; dimensional analysis methodology.
+\section{Motivation}
 
-\section{Introduction}
+The Gravitational Entropy Escrow framework (Whitmer 2026, henceforth W26) proposes that gravitational
+binding energy is structurally identical to entropy held in escrow against the local Unruh
+temperature: $\Sesc = |U_{\mathrm{grav}}|/T$, with the force law $F = T\,\nabla\Sesc$ recovering
+Newton's law (Verlinde 2011). The framework recovers Bekenstein--Hawking entropy at Schwarzschild
+horizons, the order of magnitude of the empirical Milgrom acceleration scale $a_{0}$ from a
+thermodynamic crossover at the de Sitter horizon, and several other results discussed in W26.
 
-The full text of this paper (current version v0.3.1) is provided as \texttt{paper.pdf} in this repository. An extracted-text mirror suitable for grep/search is in \texttt{paper/Paper12-v0.3.1-source.txt}.
+In dialogue with multiple large-language-model systems exploring such an extension, a covariant
+equation of the form
+\begin{equation}
+  \nabla_{\mu} J_{S}^{\mu} = \frac{2\pi k_{B}}{\hbar}\,\varepsilon_{\mathrm{bind}}
+  \tag{C8}
+\end{equation}
+was independently proposed, with $J_{S}^{\mu}$ an entropy 4-current and $\varepsilon_{\mathrm{bind}}$
+the local energy density. The dimensions balance: both sides have units of entropy-production density
+per unit time, $k_{B}/(\mathrm{m}^{3}\,\mathrm{s})$. This note documents the resolution of C8's status.
+The result is small and specific: C8 with the light-crossing-time integration prescription is
+algebraically identical to the saturated Bekenstein bound (Bekenstein 1981), so it reproduces both the
+Bekenstein--Hawking and Gibbons--Hawking entropies exactly when the standard cosmological-constant
+energy density is used. The recovery is a consistency check rather than a derivation, because horizons
+saturate the Bekenstein bound by construction, and the choice of integration time is post-hoc rather
+than derived.
 
-\section*{Companion paper}
+\section{C8 as a rate equation}
 
-This is a clarification note supplementing the Gravitational Entropy Escrow framework presented in Whitmer (2026), \url{https://github.com/Windstorm-Institute/gravitational-entropy-escrow}, DOI \texttt{10.5281/zenodo.20032023}.
+C8 is a continuity-like equation in which the divergence of an entropy 4-current is sourced by an
+energy density; both sides have dimensions of entropy-production density per unit time. To compare C8
+to a total entropy (such as Bekenstein--Hawking or Gibbons--Hawking) one must first integrate the rate
+over both volume and time. Integrating over a region of volume $V$ containing total binding energy $E$
+gives the total entropy-production rate, and multiplying by a characteristic time $t_{h}$ yields a
+total entropy:
+\begin{equation}
+  \frac{dS}{dt} = \frac{2\pi k_{B}}{\hbar}\,E,
+  \qquad
+  \SC = \frac{2\pi k_{B}}{\hbar}\,E\,t_{h}.
+\end{equation}
+The choice of $t_{h}$ is the load-bearing question; it is not specified by C8 itself.
 
-\section*{Code and Data Availability}
+\section{C8 with $t = R/c$ is the saturated Bekenstein bound}
 
-The Python script \texttt{c8\_calculations\_v0\_3.py} reproducing all numerical claims, with sympy dimensional analysis and reality checks against Planck 2018 values, is mirrored at \url{https://github.com/Windstorm-Labs/c8-clarification-note}. The script runs in under one second.
+Choosing $t_{h} = R/c$, where $R$ is the radius of the region:
+\begin{equation}
+  \SC = \frac{2\pi k_{B}}{\hbar}\,E\,\frac{R}{c} = \frac{2\pi k_{B} E R}{\hbar c}.
+\end{equation}
+This is the Bekenstein bound (Bekenstein 1981), saturated. The bound applies as an inequality to any
+localized system: the maximum entropy a region of energy $E$ and radius $R$ can contain in a quantum
+field theory respecting causality and the second law is $2\pi k_{B} E R/(\hbar c)$. Black-hole event
+horizons saturate the bound, with the saturation value being the Bekenstein--Hawking entropy; the de
+Sitter cosmological horizon also saturates it when the appropriate energy is the total vacuum energy
+enclosed. Therefore C8 with light-crossing-time integration equals the saturated Bekenstein bound by
+algebra---a known relation in a different form, not new physics.
+
+\section{Recovery of horizon entropies}
+\subsection{Schwarzschild black hole}
+For a Schwarzschild black hole of mass $M$, taking the rest energy $U = Mc^{2}$ and the Schwarzschild
+radius $r_{s} = 2GM/c^{2}$ as the relevant radius:
+\begin{equation}
+  \SC(\mathrm{BH}) = \frac{2\pi k_{B}}{\hbar}\,(Mc^{2})\,\frac{r_{s}}{c}
+  = \frac{4\pi G M^{2} k_{B}}{\hbar c} = S_{\mathrm{BH}}.
+\end{equation}
+The ratio $\SC(\mathrm{BH})/S_{\mathrm{BH}} = 1$ exactly, independent of $M$, verified numerically and
+symbolically in the accompanying script.
+
+\subsection{de Sitter cosmological horizon}
+For the de Sitter horizon, the radius is $R_{\mathrm{dS}} = \sqrt{3/\Lambda}$. Using the standard
+energy density of the cosmological constant,
+\begin{equation}
+  \varepsilon_{\Lambda} = \frac{\Lambda c^{4}}{8\pi G} \approx 5.3\times 10^{-10}\ \mathrm{J/m^{3}}
+  \quad(\text{Planck 2018}),
+\end{equation}
+the closely related quantity $\Lambda c^{2}/(8\pi G)$ is the equivalent \emph{mass} density
+($\approx 6.0\times 10^{-27}\,\mathrm{kg/m^{3}}$) and must not be substituted for the energy density.
+With total enclosed vacuum energy $E_{\mathrm{total}} = \varepsilon_{\Lambda} V_{\mathrm{dS}}$,
+$V_{\mathrm{dS}} = (4\pi/3)R_{\mathrm{dS}}^{3}$,
+\begin{equation}
+  \SC(\mathrm{dS}) = \frac{2\pi k_{B}}{\hbar}\,(\varepsilon_{\Lambda} V_{\mathrm{dS}})\,
+  \frac{R_{\mathrm{dS}}}{c} = \frac{3\pi c^{3} k_{B}}{G \hbar \Lambda} = S_{\mathrm{GH}}.
+\end{equation}
+The ratio $\SC(\mathrm{dS})/S_{\mathrm{GH}} = 1$ exactly, independent of $\Lambda$.
+
+\section{The light-crossing time is post-hoc}
+
+The choice $t_{h} = R/c$ is not derived from C8; it is one of several time scales naturally associated
+with a horizon. For a solar-mass Schwarzschild black hole, alternative natural choices include:
+\begin{itemize}
+\item Light-crossing time $r_{s}/c \approx 10^{-5}$~s, giving ratio $\SC/S_{\mathrm{BH}} = 1$.
+\item Inverse surface gravity $c/\kappa \approx 2\times 10^{-5}$~s, giving ratio $= 2$.
+\item $\pi r_{s}/c$ (inverse Hawking frequency) $\approx 3\times 10^{-5}$~s, giving ratio $= \pi$.
+\item Hawking evaporation time $\tau_{\mathrm{evap}} \approx 2\times 10^{67}$~yr, giving ratio
+$\approx 10^{80}$.
+\end{itemize}
+Only the light-crossing time produces ratio $= 1$, and it does so because $R/c$ is precisely the
+factor needed for C8 with prefactor $2\pi k_{B}/\hbar$ to algebraically equal the Bekenstein bound.
+The other natural time scales---each defensible on its own physical grounds---give different answers
+across many orders of magnitude. This is the textbook signature of a post-hoc choice: a genuine
+derivation would either select $t_{h}$ from a deeper principle or survive without privileging any
+particular choice. The agreement with horizon entropies that $R/c$ produces is therefore a consequence
+of the algebraic identity, not independent evidence for C8.
+
+\section{Status and implications}
+
+C8 with the light-crossing-time prescription is algebraically equivalent to the saturated Bekenstein
+bound; it contains no information beyond Bekenstein 1981 plus the choice of integration time. The
+published escrow framework (W26) is unaffected: the static postulate $\Sesc = |U_{\mathrm{grav}}|/T$,
+the recovery of Newton's law, the recovery of Bekenstein--Hawking entropy at horizons (W26 \S5), the
+identification of the deep-MOND limit with a de Sitter thermodynamic crossover (W26 \S6), and the
+empirical tests of W26 \S\S6.1, 8.4--8.6---the Genzel five-case test, the SPARC reanalysis, the baryonic Tully--Fisher relation, and cross-redshift consistency (all of which depend on the deep-MOND asymptote $a_{0} = c^{2}\sqrt{\Lambda/3}/(2\pi)$, not on C8)---all stand.
+
+What is ruled out is the natural-looking local-current generalization of the static escrow postulate
+as a candidate independent extension. Three directions remain open and are \emph{not} ruled out. First, \emph{quantum corrections to horizon temperatures}: the leading-order Gibbons--Hawking and Hawking temperatures may receive corrections from entanglement-entropy structure across horizons, depending on the cosmological matter content ($\Omega_m$); such corrections might derive the order-unity coefficient $\alpha \approx 1.34$ named as the open problem in W26 \S8.4.3. Calculations of this type exist for lower-dimensional analogs (Calabrese--Cardy 2004) but not, to our knowledge, for the four-dimensional de Sitter horizon in a universe with realistic matter content. Second, \emph{Rindler--de Sitter horizon matching}: the framework's commitment to a constant $a_0$ requires the de Sitter horizon temperature to set the floor for entropy exchange of accelerated observers; a correct treatment of the matching between local Rindler horizons and the global de Sitter horizon would not be a local continuity equation. Third, \emph{lattice quantum-field-theory tests of the static escrow postulate}: the identification $\Sesc = |U_{\mathrm{grav}}|/T$ can be tested directly by computing the entanglement entropy across a boundary separating two localized mass distributions and checking whether it scales as $|U_{\mathrm{grav}}|/T_{\mathrm{Unruh}}$---computationally tractable in $1{+}1$D using Peschel's formula for Gaussian states (Peschel 2003), and a sharp falsification test of the static postulate. The
+framework's central open derivation problem ($\alpha \approx 1.34$) lives in the deep-MOND
+interpolation, not in horizon-entropy magnitudes, and C8 does not address it in either direction.
+
+\section{Methodological notes}
+
+This paper is the third draft of an analysis of C8; two earlier drafts reported wrong results for
+opposite reasons, documented here because the failure modes are easy to repeat.
+
+The first draft (v0.1) reported that C8 fails by 30 orders of magnitude for galactic systems---a
+dimensional category error in which the C8 source term (an entropy-production-rate density) was
+compared directly to total entropies. It would have been caught immediately by a symbolic dimensional
+check, which was not performed on the first pass. The second draft (v0.2) corrected that error but
+reported that C8 underpredicts Gibbons--Hawking by $1/c^{2}$; this used the mass density
+$\Lambda c^{2}/(8\pi G)$ where the energy density $\Lambda c^{4}/(8\pi G)$ was required. Symbolic
+dimensional analysis cannot catch this, because both forms are dimensionally consistent within their
+respective conventions; only physical identification (``this should be an energy density, not a mass
+density'') catches it. The third draft (this document) compares each computed quantity against a
+published reality-check value---the Planck 2018 dark-energy density, the de Sitter horizon radius, and
+the Gibbons--Hawking entropy---before treating it as established.
+
+Notably, after one LLM audit identified the mass-vs-energy density error, an ``audit of the audit''
+from another system confidently reversed the correct result. Resolving the disagreement required
+independent first-principles calculation against three external anchors: the SI unit definitions, the
+Planck 2018 values, and the Friedmann equation $H^{2} = \Lambda c^{2}/3$. Three methodological lessons
+follow: symbolic dimensional analysis is necessary but not sufficient (it checks consistency within a
+convention, not the choice of convention); reality checks against published values are necessary; and
+multi-LLM adversarial review is load-bearing but cannot resolve disagreements among LLMs---recursion of
+LLM review without external grounding is unstable.
+
+\section{Conclusion}
+
+C8 is the saturated Bekenstein bound (Bekenstein 1981) expressed as a local rate equation. With the
+light-crossing-time integration prescription and the standard cosmological-constant energy density, it
+reproduces Bekenstein--Hawking and Gibbons--Hawking entropies exactly---a consistency check rather than
+a derivation, because both horizons saturate the Bekenstein bound by construction, and the choice of
+integration time is post-hoc. C8 therefore does not constitute an independent covariant extension of
+the escrow framework, even though it is internally consistent. The published framework (Whitmer 2026)
+is unaffected; its central open problem ($\alpha \approx 1.34$) is not addressed. Future researchers
+should pursue extensions through quantum corrections to horizon temperatures, Rindler--de Sitter
+matching, or lattice QFT tests of the static postulate, none of which are ruled out here.
+
+\subsection*{Acknowledgments}
+The candidate equation C8 was first proposed in dialogue with several large-language-model systems, which independently proposed equivalent forms. Adversarial review across multiple rounds was contributed by these systems; a mass-versus-energy density convention error in an intermediate draft was identified by one system's audit, and a subsequent ``audit of the audit'' from another confidently reversed the correction. Resolving the disagreement required independent first-principles calculation against Planck 2018 published values. The author is solely responsible for the calculations, conclusions, and any remaining errors.
+
+\subsection*{Code and data availability}
+The Python script reproducing all numerical claims (\texttt{c8\_calculations\_v0\_3.py}) is deposited
+alongside this preprint. It uses numerical evaluation and symbolic dimensional analysis (sympy) and
+includes explicit reality checks against published values for the dark-energy density, the de Sitter
+horizon radius, and the Gibbons--Hawking entropy. It runs in under one second and is licensed MIT.
+
+\subsection*{Data, Code \& Resources}
+\noindent Manuscript source and archived record: \url{https://github.com/Windstorm-Institute/c8-clarification-note} (Zenodo: \href{https://doi.org/10.5281/zenodo.20041991}{10.5281/zenodo.20041991}). Experiments, datasets, and analysis code: \url{https://github.com/Windstorm-Labs/c8-clarification-note}. Windstorm Institute: \url{https://windstorminstitute.org}. Windstorm Labs: \url{https://windstormlabs.com}.
+
+\begin{thebibliography}{99}\small
+\bibitem{bek} J.~D. Bekenstein, \textit{Universal upper bound on the entropy-to-energy ratio for
+bounded systems}, Phys.\ Rev.\ D \textbf{23}, 287 (1981).
+\bibitem{cc} P.~Calabrese and J.~Cardy, \textit{Entanglement entropy and quantum field theory}, J.\
+Stat.\ Mech.\ P06002 (2004).
+\bibitem{gh} G.~W. Gibbons and S.~W. Hawking, \textit{Cosmological event horizons, thermodynamics, and
+particle creation}, Phys.\ Rev.\ D \textbf{15}, 2738 (1977).
+\bibitem{hawking} S.~W. Hawking, \textit{Particle creation by black holes}, Commun.\ Math.\ Phys.\
+\textbf{43}, 199 (1975).
+\bibitem{padma} T.~Padmanabhan, \textit{Thermodynamical aspects of gravity: new insights}, Rep.\
+Prog.\ Phys.\ \textbf{73}, 046901 (2010). arXiv:0911.5004.
+\bibitem{peschel} I.~Peschel, \textit{Calculation of reduced density matrices from correlation
+functions}, J.\ Phys.\ A \textbf{36}, L205 (2003).
+\bibitem{planck} Planck Collaboration, \textit{Planck 2018 results.\ VI.\ Cosmological parameters},
+Astron.\ Astrophys.\ \textbf{641}, A6 (2020).
+\bibitem{verlinde} E.~P. Verlinde, \textit{On the origin of gravity and the laws of Newton}, JHEP
+\textbf{04}, 029 (2011).
+\bibitem{w26} G.~L. Whitmer, \textit{Gravitational Entropy Escrow: An Interpretive Synthesis of
+Thermodynamic Approaches to Gravity}, Zenodo (2026). DOI:10.5281/zenodo.20031931.
+\end{thebibliography}
 
 \end{document}
